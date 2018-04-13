@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "FoodDBService", targetNamespace = "http://soap.workshop.java.simplon.co/", wsdlLocation = "http://localhost:8081/soap-demo/foodDBService?wsdl")
+@WebServiceClient(name = "FoodDBService", targetNamespace = "http://soap.workshop.java.simplon.co/", wsdlLocation = "http://192.168.1.174:8081/soap-demo/foodDBService?wsdl")
 public class FoodDBService_Service
     extends Service
 {
@@ -30,7 +30,7 @@ public class FoodDBService_Service
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8081/soap-demo/foodDBService?wsdl");
+            url = new URL("http://192.168.1.174:8081/soap-demo/foodDBService?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

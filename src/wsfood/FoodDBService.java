@@ -85,4 +85,61 @@ public interface FoodDBService {
         @WebParam(name = "nameFilter", targetNamespace = "")
         String nameFilter);
 
+    /**
+     * 
+     * @return
+     *     returns java.util.List<java.lang.String>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getCategoryList", targetNamespace = "http://soap.workshop.java.simplon.co/", className = "wsfood.GetCategoryList")
+    @ResponseWrapper(localName = "getCategoryListResponse", targetNamespace = "http://soap.workshop.java.simplon.co/", className = "wsfood.GetCategoryListResponse")
+    @Action(input = "http://soap.workshop.java.simplon.co/FoodDBService/getCategoryListRequest", output = "http://soap.workshop.java.simplon.co/FoodDBService/getCategoryListResponse")
+    public List<String> getCategoryList();
+
+    /**
+     * 
+     * @param categoryName
+     * @return
+     *     returns int
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "createCategory", targetNamespace = "http://soap.workshop.java.simplon.co/", className = "wsfood.CreateCategory")
+    @ResponseWrapper(localName = "createCategoryResponse", targetNamespace = "http://soap.workshop.java.simplon.co/", className = "wsfood.CreateCategoryResponse")
+    @Action(input = "http://soap.workshop.java.simplon.co/FoodDBService/createCategoryRequest", output = "http://soap.workshop.java.simplon.co/FoodDBService/createCategoryResponse")
+    public int createCategory(
+        @WebParam(name = "categoryName", targetNamespace = "")
+        String categoryName);
+
+    /**
+     * 
+     * @param name
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "deleteFoodAttribute", targetNamespace = "http://soap.workshop.java.simplon.co/", className = "wsfood.DeleteFoodAttribute")
+    @ResponseWrapper(localName = "deleteFoodAttributeResponse", targetNamespace = "http://soap.workshop.java.simplon.co/", className = "wsfood.DeleteFoodAttributeResponse")
+    @Action(input = "http://soap.workshop.java.simplon.co/FoodDBService/deleteFoodAttributeRequest", output = "http://soap.workshop.java.simplon.co/FoodDBService/deleteFoodAttributeResponse")
+    public boolean deleteFoodAttribute(
+        @WebParam(name = "name", targetNamespace = "")
+        String name);
+
+    /**
+     * 
+     * @param name
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "categoryFindByName", targetNamespace = "http://soap.workshop.java.simplon.co/", className = "wsfood.CategoryFindByName")
+    @ResponseWrapper(localName = "categoryFindByNameResponse", targetNamespace = "http://soap.workshop.java.simplon.co/", className = "wsfood.CategoryFindByNameResponse")
+    @Action(input = "http://soap.workshop.java.simplon.co/FoodDBService/categoryFindByNameRequest", output = "http://soap.workshop.java.simplon.co/FoodDBService/categoryFindByNameResponse")
+    public boolean categoryFindByName(
+        @WebParam(name = "name", targetNamespace = "")
+        String name);
+
 }

@@ -4,12 +4,13 @@
 package foodMaster;
 
 
+import tools.FoodAction;
 import tools.Scan;
 
 /**
  * @author Frederick main class of application to manage the differents options
  */
-public class FoodMenu {
+public class FoodMenu extends FoodAction {
 	/**
 	 * attribute to save the main menu choice of the user
 	 */
@@ -40,6 +41,8 @@ public class FoodMenu {
 			System.out.println("What do you want to do ?");
 			System.out.println("1 - View foods");
 			System.out.println("2 - Create a food");
+			System.out.println("3 - Create a category");
+			System.out.println("4 - Delete a food");
 			System.out.println("0 - Quit the application");
 			menuChoice = Scan.userInputIntPositive("your choice : ");
 			switch (menuChoice) {
@@ -47,7 +50,13 @@ public class FoodMenu {
 				DisplayMenu.listMenu();
 				break;
 			case 2:
-				CreateMenu.listMenu();
+				FoodAction.createFood();
+				break;
+			case 3:
+				FoodAction.createCategory();
+				break;
+			case 4:
+				FoodAction.deleteFood();
 				break;
 			case 0:
 				System.out.println("Thank you and goodbye !");
