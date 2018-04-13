@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import javax.jws.WebParam;
-
 import wsfood.FoodAttribute;
 import wsfood.FoodCategory;
 import wsfood.FoodDBService_Service;
